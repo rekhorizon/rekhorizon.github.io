@@ -2,230 +2,206 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>REK Horizon — Consulting</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>REK Horizon</title>
 <style>
-  :root{
-    --brand:#0b63b8;
-    --accent:#0f84ff;
-    --muted:#707582;
-    --bg:#f7fbff;
-    --card:#ffffff;
-    --radius:14px;
-    --gap:24px;
-    --maxw:960px;
-  }
-  *{box-sizing:border-box}
+  /* Reset / basic */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
   body{
-    margin:0;
-    font-family: Inter, "Helvetica Neue", Arial, sans-serif;
-    color:#111827;
-    background:var(--bg);
+    font-family: "Georgia", "Times New Roman", serif;
+    background: #ffffff;
+    color:#0b1220;
     -webkit-font-smoothing:antialiased;
     -moz-osx-font-smoothing:grayscale;
-    scroll-behavior:smooth;
+    line-height:1.35;
   }
 
-  /* hero container */
-  .wrap{max-width:var(--maxw); margin:48px auto; padding:24px;}
-  .hero{
-    background:linear-gradient(180deg, rgba(11,99,184,0.06), rgba(15,132,255,0.03));
-    border-radius:var(--radius);
-    padding:40px;
-    display:flex;
-    gap:30px;
-    align-items:center;
-    box-shadow:0 8px 28px rgba(15,40,80,0.06);
-  }
-  .logo{
-    width:84px;
-    height:84px;
-    border-radius:12px;
-    background:linear-gradient(135deg,var(--brand),var(--accent));
-    display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px;
-    flex-shrink:0;
-  }
-  .hero .text h1{margin:0;font-size:28px;letter-spacing:-0.5px}
-  .hero .text p{margin:12px 0 0;color:var(--muted);line-height:1.5}
-
-  /* cards */
-  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:26px}
-  .card{
-    background:var(--card);
-    border-radius:12px;
-    padding:18px;
-    min-height:120px;
-    box-shadow:0 6px 18px rgba(20,40,80,0.04);
-    transform:translateY(12px);opacity:0;transition:all .6s ease;
-  }
-  .card.visible{transform:none;opacity:1}
-  .card h3{margin:0 0 8px;font-size:16px}
-  .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.4}
-
-  /* about + services */
-  .section{max-width:var(--maxw);margin:48px auto;padding:12px;}
-  .section .inner{background:var(--card);border-radius:12px;padding:32px;box-shadow:0 8px 24px rgba(12,28,60,0.04)}
-  .section h2{margin:0 0 12px}
-  .service-list{display:flex;flex-direction:column;gap:12px;margin-top:12px}
-  .service-item{display:flex;gap:12px;align-items:flex-start}
-  .dot{width:12px;height:12px;border-radius:3px;background:var(--brand);margin-top:6px;flex-shrink:0}
-
-  /* contact */
-  .contact{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .contact .left p{margin:0;color:var(--muted)}
-  .cta{
-    display:flex;gap:12px;
-  }
-  .btn{
-    background:var(--brand);
-    color:white;
-    border:none;
-    padding:12px 18px;
-    border-radius:10px;
-    cursor:pointer;
-    font-weight:600;
-    text-decoration:none;
-  }
-  .btn.secondary{
-    background:transparent;
-    color:var(--brand);
-    border:1px solid rgba(11,99,184,0.12);
-  }
-
-  footer{margin:40px 0 80px;text-align:center;color:var(--muted);font-size:14px}
-
-  /* floating contact + back to top */
-  .float-contact, #backToTop{
-    position:fixed;
-    right:20px;
-    z-index:999;
+  /* Container centering like Carrd */
+  .wrap{
+    min-height:100vh;
     display:flex;
     align-items:center;
     justify-content:center;
-    box-shadow:0 10px 30px rgba(2,6,23,0.12);
-    border-radius:999px;
+    padding:48px 20px;
   }
-  .float-contact{bottom:90px;background:var(--brand);padding:12px 14px}
-  .float-contact a{color:white;text-decoration:none;font-weight:600}
-  #backToTop{bottom:20px;background:rgba(255,255,255,0.98);padding:8px 10px;border-radius:10px}
-  #backToTop button{border:none;background:none;cursor:pointer;font-weight:600;color:var(--brand)}
+  .card{
+    width:100%;
+    max-width:980px;
+    display:grid;
+    grid-template-columns: 1fr;
+    gap:28px;
+    align-items:center;
+  }
 
-  /* small screens */
-  @media (max-width:640px){
-    .hero{flex-direction:column;align-items:flex-start}
-    .logo{width:64px;height:64px}
-    .wrap{padding:12px;margin:24px auto}
+  /* Top area: large logo text */
+  .brand {
+    text-align:center;
+    padding:36px 20px;
+  }
+  .brand .logo {
+    font-family: "Bodoni MT", "Times New Roman", serif;
+    font-size:96px;
+    letter-spacing:8px;
+    line-height:0.8;
+    color:#0b1220;
+    font-weight:700;
+    margin-bottom:18px;
+  }
+  .brand .sub {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:13px;
+    letter-spacing:6px;
+    color:#6b7280;
+    text-transform:uppercase;
+  }
+
+  /* Headline + description (centered) */
+  .headline {
+    text-align:center;
+    padding:18px 40px;
+  }
+  .headline h1{
+    font-family: "Georgia", serif;
+    font-size:22px;
+    font-weight:600;
+    color:#0b1220;
+    margin-bottom:12px;
+  }
+  .headline p{
+    color:#374151;
+    font-size:15px;
+    max-width:760px;
+    margin:0 auto;
+  }
+
+  /* Buttons row */
+  .actions {
+    display:flex;
+    gap:14px;
+    justify-content:center;
+    margin-top:10px;
+  }
+  .btn {
+    display:inline-block;
+    padding:12px 20px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+    font-size:14px;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease;
+    box-shadow: 0 6px 22px rgba(2,6,23,0.08);
+  }
+  .btn.primary{
+    background:#0b63b8;
+    color:#fff;
+    border:0;
+  }
+  .btn.ghost{
+    background:transparent;
+    color:#0b63b8;
+    border:1px solid rgba(11,99,184,0.14);
+  }
+  .btn:hover{ transform:translateY(-3px); }
+
+  /* thin separator line like Carrd */
+  .sep{height:1px;background:rgba(15,23,42,0.04);margin:34px 0;border-radius:2px}
+
+  /* Footer small text */
+  footer{
+    text-align:center;
+    color:#94a3b8;
+    font-size:13px;
+    padding:18px 8px 0 8px;
+  }
+
+  /* Floating contact (bottom-right) */
+  .float-contact{
+    position:fixed;
+    right:18px;
+    bottom:22px;
+    z-index:999;
+  }
+  .float-contact a{
+    display:inline-block;
+    background:#0b63b8;
+    color:#fff;
+    padding:11px 14px;
+    border-radius:999px;
+    font-weight:700;
+    text-decoration:none;
+    box-shadow:0 8px 28px rgba(11,99,184,0.12);
+  }
+
+  /* Responsive */
+  @media (max-width:720px){
+    .brand .logo { font-size:72px; letter-spacing:6px; }
+    .headline h1 { font-size:20px; }
+    .headline p { font-size:15px; padding:0 6px; }
+    .card{gap:16px}
   }
 </style>
 </head>
 <body>
 
-<main>
+<div class="wrap">
+  <div class="card" role="main" aria-labelledby="brand-heading">
 
-  <!-- HERO -->
-  <div class="wrap" id="top">
-    <div class="hero" role="banner" aria-label="REK Horizon hero">
-      <div class="logo" aria-hidden="true">RH</div>
-      <div class="text">
-        <h1>REK Horizon Consulting</h1>
-        <p>We help international companies enter Taiwan with practical sourcing, project management and on-the-ground implementation — fast, reliable, and low drama.</p>
+    <!-- BRAND / LOGO -->
+    <div class="brand" id="brand-heading">
+      <!-- If you want to use your image logo, replace the .logo div with:
+           <img src="Logo2.png" alt="REK Horizon" style="max-width:360px;height:auto;display:block;margin:0 auto 8px" />
+           and remove or comment the .logo div below. -->
+      <div class="logo" aria-hidden="true">REK</div>
+      <div class="sub">HORIZON</div>
+    </div>
+
+    <!-- HEADLINE & DESCRIPTION -->
+    <div class="headline">
+      <h1>We help international teams land in Taiwan — without the guesswork.</h1>
+      <p>Practical sourcing, project management, local implementation and expat support. We handle the hard bits so you can focus on growth.</p>
+
+      <div class="actions" aria-hidden="false">
+        <a class="btn primary" href="mailto:rekteam@rekhorizon.com">Email Us</a>
+        <a class="btn ghost" href="#contact">Learn more</a>
       </div>
     </div>
 
-    <!-- three quick cards -->
-    <div class="cards" id="cards">
-      <div class="card">
-        <h3>Practical Sourcing</h3>
-        <p>Find vetted suppliers, manage samples, and negotiate terms so you don’t waste time on guesswork.</p>
-      </div>
-      <div class="card">
-        <h3>Project Management</h3>
-        <p>From kickoff to delivery we coordinate teams, timelines and quality checks.</p>
-      </div>
-      <div class="card">
-        <h3>Local Implementation</h3>
-        <p>Product launches, events, and localization support — we handle logistics and on-site follow-through.</p>
-      </div>
+    <div class="sep" role="separator" aria-hidden="true"></div>
+
+    <!-- OPTIONAL: small contact block or social (keeps page like Carrd minimal) -->
+    <div style="text-align:center;padding:6px 10px 30px 10px;color:#6b7280;font-size:14px">
+      <div id="contact">rekteam@rekhorizon.com</div>
     </div>
+
   </div>
+</div>
 
-  <!-- ABOUT / SERVICES -->
-  <section class="section" id="about">
-    <div class="inner">
-      <h2>About REK Horizon</h2>
-      <p style="color:var(--muted);margin-top:8px">We combine international sourcing experience with local execution capability. Small enough to be nimble, experienced enough to reduce risk.</p>
+<footer aria-hidden="false">
+  © <span id="year"></span> REK Horizon — Made with clarity.
+</footer>
 
-      <div style="height:18px"></div>
-
-      <div class="service-list" id="services">
-        <div class="service-item"><div class="dot"></div><div><strong>Supplier search & evaluation</strong><div style="color:var(--muted)">Tailored supplier shortlists, audits, and price benchmarking.</div></div></div>
-        <div class="service-item"><div class="dot"></div><div><strong>Project management</strong><div style="color:var(--muted)">Milestone planning, vendor coordination, and progress reporting.</div></div></div>
-        <div class="service-item"><div class="dot"></div><div><strong>Implementation & events</strong><div style="color:var(--muted)">On-site coordination for product launches and events.</div></div></div>
-        <div class="service-item"><div class="dot"></div><div><strong>Translation & expat support</strong><div style="color:var(--muted)">Localization and admin help for foreign teams in Taiwan.</div></div></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACT / CTA -->
-  <section class="section" id="contact">
-    <div class="inner contact">
-      <div class="left">
-        <h2>Let's get this started</h2>
-        <p>Reach out with a short brief — we'll reply within one business day.</p>
-      </div>
-      <div class="cta">
-        <a class="btn" href="mailto:rekteam@rekhorizon.com">Email Us</a>
-        <a class="btn secondary" href="#top">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    © <span id="year"></span> REK Horizon — <span style="color:var(--muted)">rekteam@rekhorizon.com</span>
-  </footer>
-
-</main>
-
-<!-- floating contact + back to top -->
-<div class="float-contact" aria-hidden="true"><a href="mailto:rekteam@rekhorizon.com">Contact</a></div>
-<div id="backToTop" style="display:none"><button onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top</button></div>
+<div class="float-contact" aria-hidden="true">
+  <a href="mailto:rekteam@rekhorizon.com">Contact</a>
+</div>
 
 <script>
-  // set year
+  // year
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // reveal animation for cards/sections
-  function reveal() {
-    document.querySelectorAll('.card, .inner').forEach(el=>{
-      const r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight - 80) el.classList.add('visible');
-    });
-  }
-  // back to top toggler
-  window.addEventListener('scroll', function(){
-    const btn = document.getElementById('backToTop');
-    if (window.scrollY > 240) btn.style.display = 'flex'; else btn.style.display='none';
-    reveal();
-  });
-  // run once
-  reveal();
-
-  // smooth nav anchor behavior (if you later add nav links)
+  // smooth anchor nav for "Learn more" (simple)
   document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click', e=>{
+    a.addEventListener('click', function(e){
       e.preventDefault();
-      const t=document.querySelector(a.getAttribute('href'));
-      if (t) t.scrollIntoView({behavior:'smooth',block:'start'});
+      const id = this.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
     });
   });
 </script>
+
 </body>
 </html>
+
 
