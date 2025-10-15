@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REK Horizon Consulting</title>
+<style>
+  body { margin:0; font-family: Arial, sans-serif; scroll-behavior: smooth; position: relative; }
+  header { position: fixed; top:0; width:100%; background:#004080; color:white; padding:15px; z-index:1000; display:flex; justify-content:center; }
+  header nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+  section { min-height:100vh; padding:120px 20px 40px 20px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; opacity:0; transform: translateY(30px); transition: all 0.8s ease; }
+  section.visible { opacity:1; transform: translateY(0); }
+  section:nth-child(odd) { background:#f0f0f0; }
+  section:nth-child(even) { background:white; }
+  h1,h2 { margin-bottom:20px; }
+  ul { list-style:none; padding:0; }
+  ul li { margin:10px 0; }
+  footer { background:#004080; color:white; text-align:center; padding:20px; }
+  button { padding:10px 20px; font-size:16px; cursor:pointer; background:#004080; color:white; border:none; border-radius:5px; transition: transform 0.2s; }
+  button:hover { background:#0066cc; transform: scale(1.05); }
+  img.logo { max-width:200px; margin-bottom:20px; }
+
+  /* 回到頂部按鈕 */
+  #backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display:none;
+    z-index:1000;
+  }
+
+  /* 浮動聯絡按鈕 */
+  #floatContact {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    z-index:1000;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="about">
+  <img src="logo.png" alt="REK Horizon Logo" class="logo">
+  <h1>REK Horizon Consulting</h1>
+  <p>We specialize in international sourcing, project management, and coordination services for companies entering Taiwan and beyond.</p>
+</section>
+
+<section id="services">
+  <h2>Our Services</h2>
+  <ul>
+    <li>• Supplier search and evaluation</li>
+    <li>• Project management and coordination</li>
+    <li>• Product / event implementation support</li>
+    <li>• Translation and expat localization services</li>
+  </ul>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:rekteam@rekhorizon.com">rekteam@rekhorizon.com</a></p>
+  <a href="mailto:rekteam@rekhorizon.com"><button>Get in Touch</button></a>
+</section>
+
+<footer>
+  &copy; 2025 REK Horizon Consulting
+</footer>
+
+<!-- 浮動按鈕 -->
+<div id="backToTop">
+  <button onclick="window.scrollTo({top:0, behavior:'smooth'});">Back to Top</button>
+</div>
+
+<div id="floatContact">
+  <a href="mailto:rekteam@rekhorizon.com"><button>Contact Us</button></a>
+</div>
+
+<script>
+  // 顯示回到頂部按鈕
+  window.onscroll = function() {
+    const backBtn = document.getElementById("backToTop");
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      backBtn.style.display = "block";
+    } else {
+      backBtn.style.display = "none";
+    }
+
+    // 滑動淡入效果
+    document.querySelectorAll("section").forEach(section => {
+      const rect = section.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        section.classList.add("visible");
+      }
+    });
+  };
+
+  // 首次載入時觸發一次
+  window.onload = function() {
+    window.onscroll();
+  };
+</script>
+
+</body>
+</html>
