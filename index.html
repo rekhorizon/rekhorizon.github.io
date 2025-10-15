@@ -120,4 +120,68 @@
     padding:11px 14px;
     border-radius:999px;
     font-weight:700;
-    text-decor
+    text-decoration:none;
+    box-shadow:0 8px 28px rgba(11,99,184,0.12);
+  }
+
+  @media (max-width:720px){
+    .brand img { max-width:260px; }
+    .headline h1 { font-size:20px; }
+    .headline p { font-size:15px; padding:0 6px; }
+    .card{gap:16px}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="card" role="main" aria-labelledby="brand-heading">
+
+    <!-- BRAND / LOGO -->
+    <div class="brand" id="brand-heading">
+      <img src="Logo2.png" alt="REK Horizon" />
+      <div class="sub">HORIZON</div>
+    </div>
+
+    <!-- HEADLINE & DESCRIPTION -->
+    <div class="headline">
+      <h1>We help international teams land in Taiwan — without the guesswork.</h1>
+      <p>Practical sourcing, project management, local implementation and expat support. We handle the hard bits so you can focus on growth.</p>
+
+      <div class="actions">
+        <a class="btn primary" href="mailto:rekteam@rekhorizon.com">Email Us</a>
+        <a class="btn ghost" href="#contact">Learn more</a>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <div style="text-align:center;padding:6px 10px 30px 10px;color:#6b7280;font-size:14px" id="contact">
+      rekteam@rekhorizon.com
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © <span id="year"></span> REK Horizon — Made with clarity.
+</footer>
+
+<div class="float-contact">
+  <a href="mailto:rekteam@rekhorizon.com">Contact</a>
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      const id = this.getAttribute('href').slice(1);
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+</script>
+
+</body>
+</html>
